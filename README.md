@@ -5,9 +5,12 @@
 ### Github:
 
 <pre><code>
-steps:
-      - name: My first step
-        uses: docker://ravndal/sonarqube-dotnet:latest
+- name: static checker
+      uses: docker://ravndal/sonarqube-dotnet:latest
+      env:
+        sonar_token: ${{ secrets.SONAR_TOKEN }}
+        sonar_url: ${{ secrets.SONAR_URL }}
+        sonar_name: ${{ secrets.SONAR_NAME }}
 </code></pre>
 
 ### drone.io
